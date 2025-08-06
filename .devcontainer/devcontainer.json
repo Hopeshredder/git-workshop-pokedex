@@ -1,0 +1,51 @@
+{
+  "name": "Python + Node Dev Container",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "18"
+    },
+    "ghcr.io/devcontainers/features/python:1": {
+      "version": "3.11"
+    },
+    "ghcr.io/devcontainers/features/postgres:1": {
+      "version": "14"
+    }
+  },
+  "postCreateCommand": "apt-get update && apt-get install -y postgresql-client",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        // JavaScript/React
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint",
+        "xabikos.JavaScriptSnippets",
+        "dsznajder.es7-react-js-snippets",
+        "formulahendry.auto-rename-tag",
+        "formulahendry.auto-close-tag",
+        "streetsidesoftware.code-spell-checker",
+        "ecmel.vscode-html-css",
+        "ritwickdey.LiveServer",
+        "visualstudioexptteam.vscodeintellicode",
+        "ms-vscode.vscode-typescript-next",
+
+        // Python/Django
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-toolsai.jupyter",
+        "batisteo.vscode-django",
+        "kevinrose.vsc-python-indent",
+        "njpwerner.autodocstring",
+        "littlefoxteam.vscode-python-test-adapter",
+
+        // Tools
+        "ms-azuretools.vscode-docker",
+        "humao.rest-client",
+        "mhutchie.git-graph",
+        "eamodio.gitlens"
+      ]
+    }
+  }
+}
+
+
