@@ -19,6 +19,8 @@ from django.urls import path, include
 from django.http import HttpResponse
 import math
 
+
+
 def square_area_view(request):
     area_of_a_square = 2 ** 2
     return HttpResponse(area_of_a_square)
@@ -39,4 +41,5 @@ urlpatterns = [
     path('circles/', circle_area_view, name='circle'),
     path('triangles/height/<int:height>/base/<int:base>/', triangle_area_view, name='triangle'),
     path("api/v1/pokemon/", include("pokemon_app.urls")),
+    path("api/v1/all_moves", include("all_moves_app.urls")),
 ]

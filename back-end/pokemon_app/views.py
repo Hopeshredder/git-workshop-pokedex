@@ -5,18 +5,21 @@ from django.http import JsonResponse # Our responses will now be returned in JSO
 # Import both APIView and Response from DRF
 from rest_framework.views import APIView
 from rest_framework.response import Response
+from .serializers import MoveSerializer
+
 # Create your views here.
 
 # def all_pokemon(request):
 #     pokemon = PokemonSerializer(Pokemon.objects.order_by('name'), many=True) # Utilize the serializer to serialize all of our Pokemon pulled from the Database
 #     return JsonResponse({"pokemon": pokemon.data}) # JSON could only be interpreted in dictionary format so we need to ensure our response is a dictionary itself.
 
-class All_pokemon(APIView):
-    # Just like we said before we only want this information available for GET requests therefore we have to place this logic under a GET method. DRF will recognize the `get` method and trigger that method every time a GET request is sent
+
+
+class All_moves(APIView):
     def get(self, request):
-        pokemon = PokemonSerializer(Pokemon.objects.order_by('name'), many=True)
-        # Under response we don't necessarily need to send information in JSON format instead DRF will format our response and make it acceptable for Front-End frameworks
-        return Response(pokemon.data)
+        moves = MoveSerializer(Move.objects.order_by('name'), many=True)
+        return Response(moves.data)
+
     
 class A_pokemon(APIView):
     
