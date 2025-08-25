@@ -6,6 +6,7 @@ export const Navbar = () => {
         <Row style={{display:"flex", justifyContent:"space-around"}}>
             <Link to="/">Home</Link>
             <Link to="pokemon">Pokemon</Link>
+            <Link to="moves">Moves</Link>
         </Row>
     )
 }
