@@ -39,4 +39,5 @@ urlpatterns = [
     path('circles/', circle_area_view, name='circle'),
     path('triangles/height/<int:height>/base/<int:base>/', triangle_area_view, name='triangle'),
     path("api/v1/pokemon/", include("pokemon_app.urls")),
+    path("api/v1/moves/", include("move_app.urls")),
 ]
